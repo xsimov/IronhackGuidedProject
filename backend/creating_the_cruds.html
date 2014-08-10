@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Validations | IRONHACK GUIDED PROJECT</title>
+        <title>Creating the CRUD&#39;s | IRONHACK GUIDED PROJECT</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.7.0">
@@ -17,10 +17,10 @@
     
     
     
-    <link rel="next" href="../backend/crud.html" />
+    <link rel="next" href="../backend/bag_crud" />
     
     
-    <link rel="prev" href="../backend/creating_the_models.html" />
+    <link rel="prev" href="../backend/crud.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book"  data-level="3.9" data-basepath=".." data-revision="1407681985546">
+    <div class="book"  data-level="3.10.1" data-basepath=".." data-revision="1407681985546">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -299,7 +299,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.9" data-path="backend/validations.html">
+        <li class="chapter " data-level="3.9" data-path="backend/validations.html">
             
                 
                     <a href="../backend/validations.html">
@@ -332,7 +332,7 @@
                 
     
         
-        <li class="chapter " data-level="3.10.1" data-path="backend/creating_the_cruds.html">
+        <li class="chapter active" data-level="3.10.1" data-path="backend/creating_the_cruds.html">
             
                 
                     <a href="../backend/creating_the_cruds.html">
@@ -567,7 +567,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 48%;min-width: 44%;"></div>
+        <div class="inner" style="width: 56%;min-width: 52%;"></div>
     </div>
     <div class="chapters">
     
@@ -597,9 +597,9 @@
     
         <a href="../backend/validations.html" title="Validations" class="chapter done " data-progress="3.9" style="left: 48%;"></a>
     
-        <a href="../backend/crud.html" title="CRUD" class="chapter  " data-progress="3.10" style="left: 52%;"></a>
+        <a href="../backend/crud.html" title="CRUD" class="chapter done " data-progress="3.10" style="left: 52%;"></a>
     
-        <a href="../backend/creating_the_cruds.html" title="Creating the CRUD&#39;s" class="chapter  " data-progress="3.10.1" style="left: 56%;"></a>
+        <a href="../backend/creating_the_cruds.html" title="Creating the CRUD&#39;s" class="chapter done " data-progress="3.10.1" style="left: 56%;"></a>
     
         <a href="../backend/bag_crud" title="Bag CRUD" class="chapter  " data-progress="3.10.2" style="left: 60%;"></a>
     
@@ -628,64 +628,71 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_1808">
+                    <section class="normal" id="section-gitbook_1798">
                     
-                        <h1 id="validations">Validations</h1>
-<p>In our database, we are going to have some restrictions. This is what we know as &quot;Validations&quot;.</p>
-<pre><code class="lang-ruby"><span class="hljs-comment"># app/models/location.rb</span>
-validates <span class="hljs-symbol">:bagname</span>, <span class="hljs-symbol">presence:</span> <span class="hljs-keyword">true</span>,<span class="hljs-symbol">length:</span> { <span class="hljs-symbol">maximum:</span> <span class="hljs-number">30</span> }, <span class="hljs-symbol">format:</span> { <span class="hljs-symbol">with:</span> /\<span class="hljs-constant">A</span>[a-zA-<span class="hljs-constant">Z0</span>-<span class="hljs-number">9</span><span class="hljs-string">' '</span>]*\z/ }
-</code></pre>
-<p>Now, if we go to the console, this is what we will find:
-<em>Note: for opening the console, type in the terminal: rails c</em></p>
-<pre><code class="lang-bash">Loading development environment (Rails <span class="hljs-number">4.1</span>.<span class="hljs-number">4</span>)
-<span class="hljs-number">2.0</span>.<span class="hljs-number">0</span>-p481 :<span class="hljs-number">001</span> &gt; bag = Bag.new
- =&gt; <span class="hljs-comment">#&lt;Bag id: nil, bagname: nil, description: nil, created_at: nil, updated_at: nil&gt;</span>
-<span class="hljs-number">2.0</span>.<span class="hljs-number">0</span>-p481 :<span class="hljs-number">002</span> &gt; bag.valid?
- =&gt; <span class="hljs-literal">false</span>
-</code></pre>
-<p>Now it is false, because a bag needs a bagname to be valid.</p>
-<p>We can also check the uniqueness of an attribute. For example, we know that the id attribute for every model is going to be unique, because this is what identifies it.</p>
-<p>Other validations:</p>
-<ul>
-<li>length: {minimum: 3} --&gt; must be bigger than 3</li>
-<li>length: {maximum: 10} --&gt; must be smaller than 10</li>
-<li>length: {in: 3..10} --&gt; must be in between 3 and 10</li>
-<li>length: {is: 5} --&gt; must be exactly 5</li>
-<li>format: {with: /\A[0-9]/} --&gt; must match a regular expression</li>
-<li>inclusion: {in: [&#39;value 1&#39;,&#39;value 2, &#39;value 3&#39;]} --&gt; it should be contained in an arrange of values</li>
-<li>exclusion: {in: [&#39;value 1&#39;,&#39;value 2, &#39;value 3&#39;]}</li>
-<li>numericality: true</li>
-</ul>
-<h3 id="custom-validations">Custom validations</h3>
-<p>You can create your own validations! This is a validation we can include in our Trip model.</p>
-<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>from_date_it_before_to_date
-    <span class="hljs-keyword">if</span> from_date.to_i &gt; to_date.to_i
-        errors.add(<span class="hljs-symbol">:form_date</span>, <span class="hljs-string">'Your from_date can not be bigger than your to_date'</span>)
+                        <h1 id="creating-the-cruds">Creating the CRUD&#39;s</h1>
+<p>Guided by the routes, it&#39;s the moment to create the basic operations. Now, maybe it makes no sense. It seems that we have nothing, but in my opinion, fixing that before having any visual information is going to help us to go faster in the future</p>
+<p>First of all, let&#39;s create the controllers. The CRUD operations are going to be managed by the controlers.</p>
+<pre><code>$ rails g controller users
+</code></pre><pre><code>$ rails g controller bags
+</code></pre><pre><code>$ rails g controller items
+</code></pre><pre><code>$ rails g controller trips
+</code></pre><p>Following the naming convention, controllers must be in plural. Check out that you have written them correctly, otherwise the application won&#39;t work and you will have to change every controller name from singular to plural manually.</p>
+<p>We are going to start with the users. In this case, we are not going to create ALL the CRUD operations of the user, because in the future we are going to install a gem that will prepare al the user functions automatically. However, we need users if we want to have bags, items and trips, true?</p>
+<p>Let&#39;s create our first users in our database using the rails console. Type the following commands, and you will have your first user :)</p>
+<pre><code>$ rails c
+</code></pre><pre><code>2.0.0-p481 :002 &gt; user = User.new
+ =&gt; #&lt;User id: nil, username: nil, password: nil, email: nil, created_at: nil, updated_at: nil&gt;
+2.0.0-p481 :003 &gt; user.username = &quot;ElenaTorro&quot;
+ =&gt; &quot;ElenaTorro&quot;
+2.0.0-p481 :004 &gt; user.password = &quot;mipassword1&quot;
+ =&gt; &quot;mipassword1&quot;
+2.0.0-p481 :005 &gt; user.email = &quot;elenatorro@gmail.com&quot;
+ =&gt; &quot;elenatorro@gmail.com&quot;
+2.0.0-p481 :006 &gt; user.save
+   (0.2ms)  BEGIN
+  SQL (1.1ms)  INSERT INTO &quot;users&quot; (&quot;created_at&quot;, &quot;email&quot;, &quot;password&quot;, &quot;updated_at&quot;, &quot;username&quot;) VALUES ($1, $2, $3, $4, $5) RETURNING &quot;id&quot;  [[&quot;created_at&quot;, &quot;2014-08-10 14:23:43.969135&quot;], [&quot;email&quot;, &quot;elenatorro@gmail.com&quot;], [&quot;password&quot;, &quot;mipassword1&quot;], [&quot;updated_at&quot;, &quot;2014-08-10 14:23:43.969135&quot;], [&quot;username&quot;, &quot;ElenaTorro&quot;]]
+   (0.6ms)  COMMIT
+ =&gt; true
+2.0.0-p481 :007 &gt; User.first
+  User Load (0.9ms)  SELECT  &quot;users&quot;.* FROM &quot;users&quot;   ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1
+ =&gt; #&lt;User id: 1, username: &quot;ElenaTorro&quot;, password: &quot;mipassword1&quot;, email: &quot;elenatorro@gmail.com&quot;, created_at: &quot;2014-08-10 14:23:43&quot;, updated_at: &quot;2014-08-10 14:23:43&quot;&gt;
+2.0.0-p481 :008 &gt;
+</code></pre><p>This is how we are going to do this:</p>
+<ol>
+<li>Inside the users folder in the views (app/views/users) we are going to create an index file, called &quot;index.html.erb&quot;</li>
+<li>This file is going to contain only a &quot;log in&quot; button.</li>
+<li>Then, in the same folder, we are going to create another file called &quot;show.html.erb&quot;</li>
+<li>By default, in the path /localhost:3000/users, the file &quot;index&quot; is going to be rendered automatically.</li>
+<li>In the log in button, we are going to say that we want to go to the user with id number 1 (which is the one we just created).</li>
+<li>Then, it will redirect us to the show file. There, we are going to show the name of this user.
+7.</li>
+</ol>
+<p>READY?</p>
+<h3 id="user-controller">User Controller</h3>
+<pre><code class="lang-ruby"><span class="hljs-comment">#app/controllers/users_controller.rb</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UsersController</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ApplicationController</span></span></span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> </span>show
+        <span class="hljs-variable">@user</span> = <span class="hljs-constant">User</span>.find_by(<span class="hljs-symbol">id:</span> params[<span class="hljs-symbol">:id</span>])
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> </span>user_params
+        params.<span class="hljs-keyword">require</span>(<span class="hljs-symbol">:user</span>);
     <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
+`
 </code></pre>
-<p>And then, to include that method as a validation, you have to do it like before but typing &quot;validate&quot; instead of &quot;validates&quot;</p>
-<pre><code class="lang-ruby">validate <span class="hljs-symbol">:from_date_it_before_to_date</span>
+<p>It means that we are going to send the user id as a parameter (throught the route). Then, we are going to get the id and look for this user in the database. We will save this user in a variable.</p>
+<h3 id="user-index">User index</h3>
+<pre><code class="lang-ruby"><span class="hljs-comment">#app/views/users/index.html.erb</span>
+&lt;a href=<span class="hljs-string">"users/1"</span>&gt;<span class="hljs-constant">Log</span> <span class="hljs-constant">In</span>&lt;<span class="hljs-regexp">/a&gt;</span>
 </code></pre>
-<p>See the whole model:</p>
-<pre><code>class Trip &lt; ActiveRecord::Base
-    belongs_to :bag
-
-    validates :city, presence: true
-    validates :country, presence: true
-    validates :from_date, presence: true
-    validates :to_date, presence: true
-
-    validate :from_date_it_before_to_date
-
-    def from_date_it_before_to_date
-        if from_date.to_i &gt; to_date.to_i
-            errors.add(:form_date, &#39;Your from_date can not be bigger than your to_date&#39;)
-        end
-    end
-end
-</code></pre><p>Note that when you declare a custom validate in the model, it is declared in singular, while default validation are in plural (validates/validate)</p>
-<p>Now, you can add validations to your models. You can see how it looks like in Github, but you can also add your own restrictions. Be creative!</p>
+<h3 id="user-show">User show</h3>
+<pre><code class="lang-ruby"><span class="hljs-comment">#app/views/users/show.html.erb</span>
+&lt;h2&gt;<span class="hljs-constant">Welcome</span> &lt;%= <span class="hljs-variable">@user</span>.username %&gt;&lt;<span class="hljs-regexp">/h2&gt;</span>
+</code></pre>
+<p>Now, go to <a href="http://localhost:3000/users" target="_blank">http://localhost:3000/users</a> , click on the loggin button and see what happens :)</p>
+<p>This is all we are going to do with the user controller right now. Let&#39;s focus in the other models, and we will come back to the user later.</p>
 
                     
                     </section>
@@ -695,10 +702,10 @@ end
         </div>
 
         
-        <a href="../backend/creating_the_models.html" class="navigation navigation-prev " aria-label="Previous page: Creating the Models"><i class="fa fa-angle-left"></i></a>
+        <a href="../backend/crud.html" class="navigation navigation-prev " aria-label="Previous page: CRUD"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../backend/crud.html" class="navigation navigation-next " aria-label="Next page: CRUD"><i class="fa fa-angle-right"></i></a>
+        <a href="../backend/bag_crud" class="navigation navigation-next " aria-label="Next page: Bag CRUD"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
