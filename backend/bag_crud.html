@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Home Page | IRONHACK GUIDED PROJECT</title>
+        <title>First Form | IRONHACK GUIDED PROJECT</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.7.0">
@@ -17,10 +17,10 @@
     
     
     
-    <link rel="next" href="../backend/creating_the_models.html" />
+    <link rel="next" href="../backend/nested_form.html" />
     
     
-    <link rel="prev" href="../backend/set_up_the_database.html" />
+    <link rel="prev" href="../backend/creating_the_cruds.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book"  data-level="3.7" data-basepath=".." data-revision="1407705890245">
+    <div class="book"  data-level="3.10.2" data-basepath=".." data-revision="1407705890245">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -267,7 +267,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.7" data-path="backend/home_page.html">
+        <li class="chapter " data-level="3.7" data-path="backend/home_page.html">
             
                 
                     <a href="../backend/home_page.html">
@@ -348,7 +348,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10.2" data-path="backend/bag_crud.html">
+        <li class="chapter active" data-level="3.10.2" data-path="backend/bag_crud.html">
             
                 
                     <a href="../backend/bag_crud.html">
@@ -583,7 +583,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 38.46153846153846%;min-width: 34.61538461538461%;"></div>
+        <div class="inner" style="width: 57.69230769230769%;min-width: 53.84615384615385%;"></div>
     </div>
     <div class="chapters">
     
@@ -609,15 +609,15 @@
     
         <a href="../backend/home_page.html" title="Home Page" class="chapter done " data-progress="3.7" style="left: 38.46153846153846%;"></a>
     
-        <a href="../backend/creating_the_models.html" title="Creating the Models" class="chapter  " data-progress="3.8" style="left: 42.30769230769231%;"></a>
+        <a href="../backend/creating_the_models.html" title="Creating the Models" class="chapter done " data-progress="3.8" style="left: 42.30769230769231%;"></a>
     
-        <a href="../backend/validations.html" title="Validations" class="chapter  " data-progress="3.9" style="left: 46.15384615384615%;"></a>
+        <a href="../backend/validations.html" title="Validations" class="chapter done " data-progress="3.9" style="left: 46.15384615384615%;"></a>
     
-        <a href="../backend/crud.html" title="CRUD" class="chapter  " data-progress="3.10" style="left: 50%;"></a>
+        <a href="../backend/crud.html" title="CRUD" class="chapter done " data-progress="3.10" style="left: 50%;"></a>
     
-        <a href="../backend/creating_the_cruds.html" title="Creating the CRUD&#39;s" class="chapter  " data-progress="3.10.1" style="left: 53.84615384615385%;"></a>
+        <a href="../backend/creating_the_cruds.html" title="Creating the CRUD&#39;s" class="chapter done " data-progress="3.10.1" style="left: 53.84615384615385%;"></a>
     
-        <a href="../backend/bag_crud.html" title="First Form" class="chapter  " data-progress="3.10.2" style="left: 57.69230769230769%;"></a>
+        <a href="../backend/bag_crud.html" title="First Form" class="chapter done " data-progress="3.10.2" style="left: 57.69230769230769%;"></a>
     
         <a href="../backend/nested_form.html" title="Nested Form" class="chapter  " data-progress="3.10.3" style="left: 61.53846153846154%;"></a>
     
@@ -646,32 +646,39 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_3322">
+                    <section class="normal" id="section-gitbook_3329">
                     
-                        <h1 id="home-page">Home Page</h1>
-<p>For creating our home page, first we have to create a controller for the new view we are going to have.</p>
-<p>We are doing that because in the future the home page will not be the same for logged users than for invited users.</p>
-<p>Go to the terminal:</p>
-<pre><code>$ rails g controller home
-</code></pre><p>If we see inside our project folder, we will find new files that have been created automatically:</p>
-<p>Inside controllers, we have now a file named: &quot;home_controler.rb&quot;.</p>
-<p>Inside views, we have a folder named &quot;home&quot;. Inside that folder, in de views, we are going to create manually a file called: &quot;welcome.html.erb&quot;. This is the view we want to render.</p>
-<p>After that, let&#39;s go to the controller. We have to say to the controller that we have a path called &quot;welcome&quot; that is going to render that view.</p>
-<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeController</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ApplicationController</span></span></span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> </span>welcome
-        render <span class="hljs-string">"welcome"</span>
-    <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
+                        <h1 id="first-form">First Form</h1>
+<p>Now whe have the user, we can start creating the forms and new bags from the user web page.</p>
+<p>We are going to edit the &quot;users/show.html.erb&quot; file. There we are going to insert a form that will let us create new bags.</p>
+<p>Rails has an estructure called &quot;form_for&quot; that let us create a form for a concret route. Let&#39;s see an example:</p>
+<pre><code class="lang-ruby">#app/views/users/show.html.erb
+&lt;h2&gt;Welcome &lt;%= @user.username %&gt;&lt;/h2&gt;
+&lt;%= form_for :bag do |f| %&gt;
+        &lt;%=f.label :bagname  %&gt;
+        &lt;%=f.text_field :bagname  %&gt;
+        &lt;br/&gt;
+        &lt;%= f.label :description %&gt;
+        &lt;%= f.text_area :description %&gt;
+        &lt;br/&gt;
+        &lt;%= f.fields_for :trip do |t| %&gt;
+            &lt;%=t.label :city  %&gt;
+            &lt;%=t.text_field :city  %&gt;
+            &lt;br/&gt;
+            &lt;%=t.label :country  %&gt;
+            &lt;%=t.text_field :country  %&gt;
+            &lt;br/&gt;
+            &lt;%= t.datetime_select(:from_date, default: Time.now + 1.days ) %&gt;
+            &lt;br/&gt;
+            &lt;%= t.datetime_select(:to_date, default: Time.now + 2.days ) %&gt;
+            &lt;br/&gt;
+        &lt;% end  %&gt;
+
+        &lt;%= f.submit "Save" %&gt;
+        &lt;%= f.button "Cancel", :name =&gt; "cancel"%&gt;
+&lt;% end %&gt;
 </code></pre>
-<p>Now, open welcome.html.erb and type a welcome message, like that:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Welcome to Bagzipz<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-</code></pre>
-<p>And now, do you remember the file &quot;routes.rb&quot;?. Ok, we have to say that the first page we want to see when we go into our application is the welcome page.</p>
-<p>Go to that file and write the following line:</p>
-<pre><code class="lang-ruby"> root <span class="hljs-string">'home#welcome'</span>
-</code></pre>
-<p>Refresh now <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.
-You should see your welcome message.</p>
+<p>Here we have two form_for. The first one is for the bags. We include the bags fields. The second one is for the trips. Remember that a bag has a trip, and that this fields are mandatory. But don&#39;t copy it yet, because there is something missing. We have to create before what is called &quot;nested attributes&quot;</p>
 
                     
                     </section>
@@ -681,10 +688,10 @@ You should see your welcome message.</p>
         </div>
 
         
-        <a href="../backend/set_up_the_database.html" class="navigation navigation-prev " aria-label="Previous page: Set up the database"><i class="fa fa-angle-left"></i></a>
+        <a href="../backend/creating_the_cruds.html" class="navigation navigation-prev " aria-label="Previous page: Creating the CRUD&#39;s"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../backend/creating_the_models.html" class="navigation navigation-next " aria-label="Next page: Creating the Models"><i class="fa fa-angle-right"></i></a>
+        <a href="../backend/nested_form.html" class="navigation navigation-next " aria-label="Next page: Nested Form"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

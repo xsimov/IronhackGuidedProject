@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1407681985547
+# Revision 1407705890247
 
 CACHE:
 index.html
@@ -7,18 +7,20 @@ backend/home_page.html
 backend/README.html
 backend/creating_the_cruds.html
 backend/creating_the_models.html
+backend/create_a_new_project.html
 backend/crud.html
 backend/gemfile.html
-backend/create_a_new_project.html
+backend/bag_crud.html
 backend/model-view-controller.html
 backend/naming_convention.html
+backend/nested_form.html
 backend/scaffolding.html
 backend/set_up_the_database.html
 backend/setup_ruby_&_ruby_on_rails.html
 backend/validations.html
 design_the_database/README.html
-plan_your_project/README.html
 frontend/README.html
+plan_your_project/README.html
 gitbook/app.js
 gitbook/fonts/fontawesome/FontAwesome.otf
 gitbook/fonts/fontawesome/fontawesome-webfont.eot

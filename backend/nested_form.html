@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Home Page | IRONHACK GUIDED PROJECT</title>
+        <title>Nested Form | IRONHACK GUIDED PROJECT</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.7.0">
@@ -17,10 +17,10 @@
     
     
     
-    <link rel="next" href="../backend/creating_the_models.html" />
+    <link rel="next" href="../backend/naming_convention.html" />
     
     
-    <link rel="prev" href="../backend/set_up_the_database.html" />
+    <link rel="prev" href="../backend/bag_crud.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book"  data-level="3.7" data-basepath=".." data-revision="1407705890245">
+    <div class="book"  data-level="3.10.3" data-basepath=".." data-revision="1407705890245">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -267,7 +267,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.7" data-path="backend/home_page.html">
+        <li class="chapter " data-level="3.7" data-path="backend/home_page.html">
             
                 
                     <a href="../backend/home_page.html">
@@ -364,7 +364,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10.3" data-path="backend/nested_form.html">
+        <li class="chapter active" data-level="3.10.3" data-path="backend/nested_form.html">
             
                 
                     <a href="../backend/nested_form.html">
@@ -583,7 +583,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 38.46153846153846%;min-width: 34.61538461538461%;"></div>
+        <div class="inner" style="width: 61.53846153846154%;min-width: 57.69230769230769%;"></div>
     </div>
     <div class="chapters">
     
@@ -609,17 +609,17 @@
     
         <a href="../backend/home_page.html" title="Home Page" class="chapter done " data-progress="3.7" style="left: 38.46153846153846%;"></a>
     
-        <a href="../backend/creating_the_models.html" title="Creating the Models" class="chapter  " data-progress="3.8" style="left: 42.30769230769231%;"></a>
+        <a href="../backend/creating_the_models.html" title="Creating the Models" class="chapter done " data-progress="3.8" style="left: 42.30769230769231%;"></a>
     
-        <a href="../backend/validations.html" title="Validations" class="chapter  " data-progress="3.9" style="left: 46.15384615384615%;"></a>
+        <a href="../backend/validations.html" title="Validations" class="chapter done " data-progress="3.9" style="left: 46.15384615384615%;"></a>
     
-        <a href="../backend/crud.html" title="CRUD" class="chapter  " data-progress="3.10" style="left: 50%;"></a>
+        <a href="../backend/crud.html" title="CRUD" class="chapter done " data-progress="3.10" style="left: 50%;"></a>
     
-        <a href="../backend/creating_the_cruds.html" title="Creating the CRUD&#39;s" class="chapter  " data-progress="3.10.1" style="left: 53.84615384615385%;"></a>
+        <a href="../backend/creating_the_cruds.html" title="Creating the CRUD&#39;s" class="chapter done " data-progress="3.10.1" style="left: 53.84615384615385%;"></a>
     
-        <a href="../backend/bag_crud.html" title="First Form" class="chapter  " data-progress="3.10.2" style="left: 57.69230769230769%;"></a>
+        <a href="../backend/bag_crud.html" title="First Form" class="chapter done " data-progress="3.10.2" style="left: 57.69230769230769%;"></a>
     
-        <a href="../backend/nested_form.html" title="Nested Form" class="chapter  " data-progress="3.10.3" style="left: 61.53846153846154%;"></a>
+        <a href="../backend/nested_form.html" title="Nested Form" class="chapter done " data-progress="3.10.3" style="left: 61.53846153846154%;"></a>
     
         <a href="../backend/naming_convention.html" title="Naming convention" class="chapter  new-chapter" data-progress="4" style="left: 65.38461538461539%;"></a>
     
@@ -646,32 +646,92 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_3322">
+                    <section class="normal" id="section-gitbook_3332">
                     
-                        <h1 id="home-page">Home Page</h1>
-<p>For creating our home page, first we have to create a controller for the new view we are going to have.</p>
-<p>We are doing that because in the future the home page will not be the same for logged users than for invited users.</p>
-<p>Go to the terminal:</p>
-<pre><code>$ rails g controller home
-</code></pre><p>If we see inside our project folder, we will find new files that have been created automatically:</p>
-<p>Inside controllers, we have now a file named: &quot;home_controler.rb&quot;.</p>
-<p>Inside views, we have a folder named &quot;home&quot;. Inside that folder, in de views, we are going to create manually a file called: &quot;welcome.html.erb&quot;. This is the view we want to render.</p>
-<p>After that, let&#39;s go to the controller. We have to say to the controller that we have a path called &quot;welcome&quot; that is going to render that view.</p>
-<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeController</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ApplicationController</span></span></span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> </span>welcome
-        render <span class="hljs-string">"welcome"</span>
-    <span class="hljs-keyword">end</span>
+                        <h1 id="nested-form">Nested Form</h1>
+<p>In our example, we are going to illustrate what is a nested form and how it works. I thought it could be important to do it before other easier forms, because you will probably need them for your future project.</p>
+<p>In our case, we have one &quot;trip&quot; that belongs to a &quot;bag&quot;. We have to declare &quot;trip&quot; as a nested attribute of bag. It means that a trip can not be created without a bag, and a bag has to have a trip. We are creating a &quot;one to one&quot; relationship.</p>
+<h3 id="in-the-model">In the model</h3>
+<p>This is how the bag model should look like now</p>
+<pre><code class="lang-ruby"><span class="hljs-comment">#app/models/bag.rb</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bag</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
+    belongs_to <span class="hljs-symbol">:user</span>
+    has_many <span class="hljs-symbol">:items</span>
+    has_one <span class="hljs-symbol">:trip</span>
+    accepts_nested_attributes_for <span class="hljs-symbol">:trip</span>
+
+    after_initialize <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">self</span>.trip ||= <span class="hljs-keyword">self</span>.build_trip()
+      <span class="hljs-keyword">end</span>
+
+    validates <span class="hljs-symbol">:bagname</span>, <span class="hljs-symbol">presence:</span> <span class="hljs-keyword">true</span>,<span class="hljs-symbol">length:</span> { <span class="hljs-symbol">maximum:</span> <span class="hljs-number">30</span> }, <span class="hljs-symbol">format:</span> { <span class="hljs-symbol">with:</span> /\<span class="hljs-constant">A</span>[a-zA-<span class="hljs-constant">Z0</span>-<span class="hljs-number">9</span><span class="hljs-string">' '</span>]*\z/ }
 <span class="hljs-keyword">end</span>
 </code></pre>
-<p>Now, open welcome.html.erb and type a welcome message, like that:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Welcome to Bagzipz<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<p>The important line here is the &quot;after initialize&quot;, which will let you have access to the &quot;trip&quot; attribute of bag. Let&#39;s see now the form again, now rewrited to be a real &quot;nested form&quot;</p>
+<h3 id="in-the-view">In the view</h3>
+<pre><code class="lang-ruby"><span class="hljs-comment">#app/views/users/show.html.erb</span>
+&lt;%= form_for <span class="hljs-variable">@bag</span>, <span class="hljs-symbol">url:</span> {<span class="hljs-symbol">controller:</span> <span class="hljs-string">"bags"</span>, <span class="hljs-symbol">action:</span> <span class="hljs-string">"create"</span>, <span class="hljs-symbol">user_id:</span> <span class="hljs-variable">@user</span>.id} <span class="hljs-keyword">do</span> |f| %&gt;
+        &lt;%=f.label <span class="hljs-symbol">:bagname</span>  %&gt;
+        &lt;%=f.text_field <span class="hljs-symbol">:bagname</span>  %&gt;
+        &lt;br/&gt;
+        &lt;%= f.label <span class="hljs-symbol">:description</span> %&gt;
+        &lt;%= f.text_area <span class="hljs-symbol">:description</span> %&gt;
+        &lt;br/&gt;
+        &lt;%= f.fields_for <span class="hljs-symbol">:trip</span> <span class="hljs-keyword">do</span> |trip_form| %&gt;
+            &lt;%=trip_form.label <span class="hljs-symbol">:city</span>  %&gt;
+            &lt;%=trip_form.text_field <span class="hljs-symbol">:city</span>  %&gt;
+            &lt;br/&gt;
+            &lt;%=trip_form.label <span class="hljs-symbol">:country</span>  %&gt;
+            &lt;%=trip_form.text_field <span class="hljs-symbol">:country</span>  %&gt;
+            &lt;br/&gt;
+            &lt;%= trip_form.datetime_select(<span class="hljs-symbol">:from_date</span>, <span class="hljs-function">default: </span><span class="hljs-constant">Time</span>.now + <span class="hljs-number">1</span>.days ) %&gt;
+            &lt;br/&gt;
+            &lt;%= trip_form.datetime_select(<span class="hljs-symbol">:to_date</span>, <span class="hljs-function">default: </span><span class="hljs-constant">Time</span>.now + <span class="hljs-number">2</span>.days ) %&gt;
+            &lt;br/&gt;
+        &lt;% <span class="hljs-keyword">end</span>  %&gt;
+        &lt;%= f.submit <span class="hljs-string">"Save"</span> %&gt;
+&lt;% <span class="hljs-keyword">end</span> %&gt;
 </code></pre>
-<p>And now, do you remember the file &quot;routes.rb&quot;?. Ok, we have to say that the first page we want to see when we go into our application is the welcome page.</p>
-<p>Go to that file and write the following line:</p>
-<pre><code class="lang-ruby"> root <span class="hljs-string">'home#welcome'</span>
+<p>Now, you can see that we access to the trip attribute like that: &quot;:trip&quot;</p>
+<p>Last step:</p>
+<h3 id="in-the-controller">In the controller</h3>
+<pre><code class="lang-ruby"><span class="hljs-comment">#app/controllers/bags_controller.rb</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>create
+        user = <span class="hljs-constant">User</span>.find(params[<span class="hljs-symbol">:user_id</span>])
+        <span class="hljs-variable">@bag</span> = user.bags.new bag_params
+        <span class="hljs-keyword">if</span> params[<span class="hljs-symbol">:cancel</span>]
+            redirect_to <span class="hljs-symbol">action:</span> <span class="hljs-string">'show'</span>, <span class="hljs-symbol">controller:</span> <span class="hljs-string">'users'</span>, <span class="hljs-symbol">id:</span> user.id
+
+        <span class="hljs-keyword">elsif</span> <span class="hljs-variable">@bag</span>.save
+            <span class="hljs-variable">@bag</span>.reload.trip
+            flash[<span class="hljs-symbol">:notice</span>] = <span class="hljs-string">'Bag was created successfully'</span>
+            redirect_to <span class="hljs-symbol">action:</span> <span class="hljs-string">'show'</span>, <span class="hljs-symbol">controller:</span> <span class="hljs-string">'users'</span>, <span class="hljs-symbol">id:</span> user.id
+        <span class="hljs-keyword">else</span>
+            flash[<span class="hljs-symbol">:alert</span>]=<span class="hljs-string">"Bag couldn't be created"</span>
+            redirect_to <span class="hljs-symbol">action:</span> <span class="hljs-string">'show'</span>, <span class="hljs-symbol">controller:</span> <span class="hljs-string">'users'</span>, <span class="hljs-symbol">id:</span> user.id
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> </span>new
+        <span class="hljs-variable">@bag</span> = <span class="hljs-constant">Bag</span>.new
+        <span class="hljs-variable">@bag</span>.trip.build
+    <span class="hljs-keyword">end</span>
+
+    private
+    <span class="hljs-function"><span class="hljs-keyword">def</span> </span>bag_params
+        params.<span class="hljs-keyword">require</span>(<span class="hljs-symbol">:bag</span>).permit(<span class="hljs-symbol">:bagname</span>, <span class="hljs-symbol">:description</span>, <span class="hljs-symbol">:user_id</span>, <span class="hljs-symbol">trip_attributes:</span> [<span class="hljs-symbol">:id</span>,<span class="hljs-symbol">:city</span>,<span class="hljs-symbol">:country</span>, <span class="hljs-symbol">:from_date</span>, <span class="hljs-symbol">:to_date</span>])
+<span class="hljs-keyword">end</span>
 </code></pre>
-<p>Refresh now <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.
-You should see your welcome message.</p>
+<p>This is the most important part.</p>
+<p>In the &quot;new&quot; method, we have to say that we &quot;build&quot; the trip attribute for the bag.</p>
+<p>Then, in the &quot;create&quot; method, we have to:</p>
+<ol>
+<li>Create the bag, from the user object</li>
+<li>Once we save it, reload the trip from the bag object.</li>
+<li>When we create it, we have to indicate in the permited params that we are sending the trip attributes and which ones are we sending.</li>
+</ol>
+<p>Have you realized that trip is allways in singular? This is because it is only &quot;one&quot; object, a bag is only going to has a trip, and a trip is only to belong to a bag. Otherwise, the name would have been in <strong>plural</strong>.</p>
+<p>If you go now to:</p>
 
                     
                     </section>
@@ -681,10 +741,10 @@ You should see your welcome message.</p>
         </div>
 
         
-        <a href="../backend/set_up_the_database.html" class="navigation navigation-prev " aria-label="Previous page: Set up the database"><i class="fa fa-angle-left"></i></a>
+        <a href="../backend/bag_crud.html" class="navigation navigation-prev " aria-label="Previous page: First Form"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../backend/creating_the_models.html" class="navigation navigation-next " aria-label="Next page: Creating the Models"><i class="fa fa-angle-right"></i></a>
+        <a href="../backend/naming_convention.html" class="navigation navigation-next " aria-label="Next page: Naming convention"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
