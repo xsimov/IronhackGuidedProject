@@ -1,0 +1,686 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../manifest.appcache">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Validations | IRONHACK GUIDED PROJECT</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 0.7.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../backend/crud.html" />
+    
+    
+    <link rel="prev" href="../backend/creating_the_models.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="3.9" data-basepath=".." data-revision="1407678169509">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >IRONHACK GUIDED PROJECT</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="plan_your_project/README.html">
+            
+                
+                    <a href="../plan_your_project/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Plan your project
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="design_the_database/README.html">
+            
+                
+                    <a href="../design_the_database/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Design the database
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="backend/README.html">
+            
+                
+                    <a href="../backend/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Backend
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="backend/setup_ruby_&amp;_ruby_on_rails.html">
+            
+                
+                    <a href="../backend/setup_ruby_&amp;_ruby_on_rails.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Setup Ruby &amp; Ruby on Rails
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="backend/create_a_new_project.html">
+            
+                
+                    <a href="../backend/create_a_new_project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         Create a new project
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="backend/scaffolding.html">
+            
+                
+                    <a href="../backend/scaffolding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         Scaffolding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="backend/model-view-controller.html">
+            
+                
+                    <a href="../backend/model-view-controller.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         Model-View-Controller
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="backend/gemfile.html">
+            
+                
+                    <a href="../backend/gemfile.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         Gemfile
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="backend/set_up_the_database.html">
+            
+                
+                    <a href="../backend/set_up_the_database.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         Set up the database
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="backend/home_page.html">
+            
+                
+                    <a href="../backend/home_page.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         Home Page
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.8" data-path="backend/creating_the_models.html">
+            
+                
+                    <a href="../backend/creating_the_models.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         Creating the Models
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.9" data-path="backend/validations.html">
+            
+                
+                    <a href="../backend/validations.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         Validations
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.10" data-path="backend/crud.html">
+            
+                
+                    <a href="../backend/crud.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                         CRUD
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="backend/naming_convention.html">
+            
+                
+                    <a href="../backend/naming_convention.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Naming convention
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="creating_an_api/README">
+            
+                
+                    <a href="../creating_an_api/README">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Creating an API
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="creating_an_api/postman">
+            
+                
+                    <a href="../creating_an_api/postman">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         Postman
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="frontend/README.html">
+            
+                
+                    <a href="../frontend/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         Frontend
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="frontend/inside_the_current_application">
+            
+                
+                    <a href="../frontend/inside_the_current_application">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         Inside the current application
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1.1" data-path="frontend/bootstrap_simple_guide_of_use">
+            
+                
+                    <a href="../frontend/bootstrap_simple_guide_of_use">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.1.</b>
+                        
+                         Bootstrap: simple guide of use
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.1.2" data-path="frontend/using_sass">
+            
+                
+                    <a href="../frontend/using_sass">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.2.</b>
+                        
+                         Using SASS
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="frontend/client-side_using_the_api">
+            
+                
+                    <a href="../frontend/client-side_using_the_api">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         Client-side using the API
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="upload_to_heroku/README">
+            
+                
+                    <a href="../upload_to_heroku/README">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         Upload to Heroku
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="bonus_create_your_own_gem/README">
+            
+                
+                    <a href="../bonus_create_your_own_gem/README">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         BONUS: Create your own gem
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 52.17391304347826%;min-width: 47.82608695652174%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../plan_your_project/README.html" title="Plan your project" class="chapter done new-chapter" data-progress="1" style="left: 4.3478260869565215%;"></a>
+    
+        <a href="../design_the_database/README.html" title="Design the database" class="chapter done new-chapter" data-progress="2" style="left: 8.695652173913043%;"></a>
+    
+        <a href="../backend/README.html" title="Backend" class="chapter done new-chapter" data-progress="3" style="left: 13.043478260869565%;"></a>
+    
+        <a href="../backend/setup_ruby_&amp;_ruby_on_rails.html" title="Setup Ruby &amp; Ruby on Rails" class="chapter done " data-progress="3.1" style="left: 17.391304347826086%;"></a>
+    
+        <a href="../backend/create_a_new_project.html" title="Create a new project" class="chapter done " data-progress="3.2" style="left: 21.73913043478261%;"></a>
+    
+        <a href="../backend/scaffolding.html" title="Scaffolding" class="chapter done " data-progress="3.3" style="left: 26.08695652173913%;"></a>
+    
+        <a href="../backend/model-view-controller.html" title="Model-View-Controller" class="chapter done " data-progress="3.4" style="left: 30.434782608695652%;"></a>
+    
+        <a href="../backend/gemfile.html" title="Gemfile" class="chapter done " data-progress="3.5" style="left: 34.78260869565217%;"></a>
+    
+        <a href="../backend/set_up_the_database.html" title="Set up the database" class="chapter done " data-progress="3.6" style="left: 39.130434782608695%;"></a>
+    
+        <a href="../backend/home_page.html" title="Home Page" class="chapter done " data-progress="3.7" style="left: 43.47826086956522%;"></a>
+    
+        <a href="../backend/creating_the_models.html" title="Creating the Models" class="chapter done " data-progress="3.8" style="left: 47.82608695652174%;"></a>
+    
+        <a href="../backend/validations.html" title="Validations" class="chapter done " data-progress="3.9" style="left: 52.17391304347826%;"></a>
+    
+        <a href="../backend/crud.html" title="CRUD" class="chapter  " data-progress="3.10" style="left: 56.52173913043478%;"></a>
+    
+        <a href="../backend/naming_convention.html" title="Naming convention" class="chapter  new-chapter" data-progress="4" style="left: 60.869565217391305%;"></a>
+    
+        <a href="../creating_an_api/README" title="Creating an API" class="chapter  new-chapter" data-progress="5" style="left: 65.21739130434783%;"></a>
+    
+        <a href="../creating_an_api/postman" title="Postman" class="chapter  " data-progress="5.1" style="left: 69.56521739130434%;"></a>
+    
+        <a href="../frontend/README.html" title="Frontend" class="chapter  new-chapter" data-progress="6" style="left: 73.91304347826087%;"></a>
+    
+        <a href="../frontend/inside_the_current_application" title="Inside the current application" class="chapter  " data-progress="6.1" style="left: 78.26086956521739%;"></a>
+    
+        <a href="../frontend/bootstrap_simple_guide_of_use" title="Bootstrap: simple guide of use" class="chapter  " data-progress="6.1.1" style="left: 82.6086956521739%;"></a>
+    
+        <a href="../frontend/using_sass" title="Using SASS" class="chapter  " data-progress="6.1.2" style="left: 86.95652173913044%;"></a>
+    
+        <a href="../frontend/client-side_using_the_api" title="Client-side using the API" class="chapter  " data-progress="6.2" style="left: 91.30434782608695%;"></a>
+    
+        <a href="../upload_to_heroku/README" title="Upload to Heroku" class="chapter  new-chapter" data-progress="7" style="left: 95.65217391304348%;"></a>
+    
+        <a href="../bonus_create_your_own_gem/README" title="BONUS: Create your own gem" class="chapter  new-chapter" data-progress="8" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_1229">
+                    
+                        <h1 id="validations">Validations</h1>
+<p>In our database, we are going to have some restrictions. This is what we know as &quot;Validations&quot;.</p>
+<pre><code class="lang-ruby"><span class="hljs-comment"># app/models/location.rb</span>
+validates <span class="hljs-symbol">:bagname</span>, <span class="hljs-symbol">presence:</span> <span class="hljs-keyword">true</span>,<span class="hljs-symbol">length:</span> { <span class="hljs-symbol">maximum:</span> <span class="hljs-number">30</span> }, <span class="hljs-symbol">format:</span> { <span class="hljs-symbol">with:</span> /\<span class="hljs-constant">A</span>[a-zA-<span class="hljs-constant">Z0</span>-<span class="hljs-number">9</span><span class="hljs-string">' '</span>]*\z/ }
+</code></pre>
+<p>Now, if we go to the console, this is what we will find:
+<em>Note: for opening the console, type in the terminal: rails c</em></p>
+<pre><code class="lang-bash">Loading development environment (Rails <span class="hljs-number">4.1</span>.<span class="hljs-number">4</span>)
+<span class="hljs-number">2.0</span>.<span class="hljs-number">0</span>-p481 :<span class="hljs-number">001</span> &gt; bag = Bag.new
+ =&gt; <span class="hljs-comment">#&lt;Bag id: nil, bagname: nil, description: nil, created_at: nil, updated_at: nil&gt;</span>
+<span class="hljs-number">2.0</span>.<span class="hljs-number">0</span>-p481 :<span class="hljs-number">002</span> &gt; bag.valid?
+ =&gt; <span class="hljs-literal">false</span>
+</code></pre>
+<p>Now it is false, because a bag needs a bagname to be valid.</p>
+<p>We can also check the uniqueness of an attribute. For example, we know that the id attribute for every model is going to be unique, because this is what identifies it.</p>
+<p>Other validations:</p>
+<ul>
+<li>length: {minimum: 3} --&gt; must be bigger than 3</li>
+<li>length: {maximum: 10} --&gt; must be smaller than 10</li>
+<li>length: {in: 3..10} --&gt; must be in between 3 and 10</li>
+<li>length: {is: 5} --&gt; must be exactly 5</li>
+<li>format: {with: /\A[0-9]/} --&gt; must match a regular expression</li>
+<li>inclusion: {in: [&#39;value 1&#39;,&#39;value 2, &#39;value 3&#39;]} --&gt; it should be contained in an arrange of values</li>
+<li>exclusion: {in: [&#39;value 1&#39;,&#39;value 2, &#39;value 3&#39;]}</li>
+<li>numericality: true</li>
+</ul>
+<h3 id="custom-validations">Custom validations</h3>
+<p>You can create your own validations! This is a validation we can include in our Trip model.</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>from_date_it_before_to_date
+    <span class="hljs-keyword">if</span> from_date.to_i &gt; to_date.to_i
+        errors.add(<span class="hljs-symbol">:form_date</span>, <span class="hljs-string">'Your from_date can not be bigger than your to_date'</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>And then, to include that method as a validation, you have to do it like before but typing &quot;validate&quot; instead of &quot;validates&quot;</p>
+<pre><code class="lang-ruby">validate <span class="hljs-symbol">:from_date_it_before_to_date</span>
+</code></pre>
+<p>See the whole model:</p>
+<pre><code>class Trip &lt; ActiveRecord::Base
+    belongs_to :bag
+
+    validates :city, presence: true
+    validates :country, presence: true
+    validates :from_date, presence: true
+    validates :to_date, presence: true
+
+    validate :from_date_it_before_to_date
+
+    def from_date_it_before_to_date
+        if from_date.to_i &gt; to_date.to_i
+            errors.add(:form_date, &#39;Your from_date can not be bigger than your to_date&#39;)
+        end
+    end
+end
+</code></pre><p>Note that when you declare a custom validate in the model, it is declared in singular, while default validation are in plural (validates/validate)</p>
+<p>Now, you can add validations to your models. You can see how it looks like in Github, but you can also add your own restrictions. Be creative!</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../backend/creating_the_models.html" class="navigation navigation-prev " aria-label="Previous page: Creating the Models"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../backend/crud.html" class="navigation navigation-next " aria-label="Next page: CRUD"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
